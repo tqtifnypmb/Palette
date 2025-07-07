@@ -18,7 +18,7 @@ extension UIImage {
         return Palette.from(image: self)?.generate()
     }
 
-    public func createPalette(_ completion: @escaping (Palette) -> Void) {
+    public func createPalette(_ completion: @escaping (Palette?) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
             guard let palette = Palette.from(image: self) else {
                 completion(nil)
